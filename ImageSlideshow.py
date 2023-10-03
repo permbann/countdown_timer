@@ -4,11 +4,11 @@ from PIL import Image, ImageTk
 
 
 class ImageSlideshow(tk.Toplevel):
-    def __init__(self, root):
+    def __init__(self, root, image_paths):
         super().__init__(root)
         self.attributes('-fullscreen', True)
 
-        self.image_paths = ImageSlideshow.get_file_paths("images")
+        self.image_paths = image_paths  # ImageSlideshow.get_file_paths("images")
         self.current_image_index = 0
 
         self.canvas = tk.Canvas(self)
